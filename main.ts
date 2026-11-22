@@ -2,7 +2,7 @@ import { readdirSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 const inDir = process.env.MAKEFUN_INPUT_DIR ?? "/input";
 const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
-// Immediate length per opcode; -1 means unknown opcode.
+// Immediate length; -1 = unknown opcode.
 function immLen(op: number): number {
   if (op === 0x01) return 1;
   if (op === 0x02) return 4;
