@@ -12,7 +12,7 @@ function immLen(op: number): number {
     (op >= 0x50 && op <= 0x53);
   return plain ? 0 : -1;
 }
-// [values popped, net stack growth] per opcode.
+// [pops, net growth] per opcode.
 function stackNeed(op: number): [number, number] {
   switch (op) {
     case 0x01: case 0x02: case 0x52: return [0, 1];
